@@ -210,7 +210,7 @@
     z-index: -1;
   }
   .medium {
-    background-image: url(../images/Mask-feuilles-ginko.png);
+    background-image: url(images/Mask-feuilles-ginko.png);
     background-size: 100%;
     height: 430vh; /* Plus grand car défile plus vite */
     z-index: 2;
@@ -222,7 +222,7 @@
     font-size: 30px;
   }
   .fast {
-    background-image: url(../images/Mask-feuilles-ginko-2.png);
+    background-image: url(images/Mask-feuilles-ginko-2.png);
     background-size: 100%;
     height: 630vh; /* Le plus grand car défile encore plus vite */
     z-index: 3;
