@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+  <title>Portefolio Véronique Urbino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body> 
+  <header class="header">
+    <nav class="radius-left">
+      <ul>
+        <li><a href="#about">A propos</a></li>
+        <li><a href="#technologies">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <div class="logo-nom radius-right">
+      <h1><a href="#home">Véronique Urbino {<br>developpeur-web: frontend;<br>}</a></h1>
+    </div>
+  
+    <!-- change le background-color de class .fond via JavaScript -->
+    <div class="radius-left color-picker">
+      <label for="background-color-picker"> <span id="emoji">😃</span>   Choisis ta couleur :</label>
+      <input type="color" id="background-color-picker" name="background-color-picker">
+    </div>
+  </header>
+
+  <main>
+    <div class="parallax-container fond"></div>
+    <div class="parallax-container medium">
+      <img class="the-end" src="images/the-end.webp" alt="icone the end">
+          
+    </div>
+    <div class="parallax-container fast"></div>
+    <div class="parallax-container contenu" id="home">
+      <section class="a-propos encadre" id="about">
+        <div>
+          <h2>Bonjour,</h2>
+          <p>Je suis développeuse web frontend basée en Île de France.</p>
+          <p>
+            Spécialisée dans la création d'expériences web modernes et dynamiques, combinant créativité et techniques innovantes, je propose des interfaces intuitives, des animations interactives et une expérience utilisateur de qualité. 
+            Les meilleures pratiques SEO, pour l'optimisation du référencement sur les moteurs de recherche, et le respect des principes du green code, font partie intégrante de ma conception d'un site web performant et durable.
+          </p>
+          <button id="voir-plus" >Voir plus</button>
+        </div>
+      </section>
+
+      <div id="modal" class="modal about-text">
+        <div class="modal-content  encadre">
+          <span class="close">&times;</span>
+          <h2>Mes formations :</h2>
+          <p>
+            En 2022, après une carrière technico-administrative, j'ai effectué un virage professionnel et obtenu une 
+            certification EasyVista. Dans l'ITSM, j'ai pu développer ma compréhension des contraintes techniques des entreprises, et travailler directement avec les utilisateurs pour définir leurs besoins et adapter les solutions.</p>
+          <p>
+            Depuis février 2024, j'ai entrepris une formation de développeur intégrateur frontend chez OpenClassrooms. En me spécialisant dans le développement web, j'accède aujourd'hui à un domaine qui me passionne. À ce jour, je continue de perfectionner les différentes compétences acquises pendant ma formation.</p>
+        </div>
+      </div>
+
+
+
+
+      <section class="technologies" id="technologies">
+        
+        <div class="competences encadre">  
+          <h2 >Mes compétences :</h2>
+          <ul>
+            <li>HTML (structure de pages web)</li>
+            <li>CSS (styles, responsive design, animations)</li>
+            <li>Sass (préprocesseur CSS)</li>
+            <li>JavaScript (interactions, manipulation du DOM, dynamisation de sites)</li>
+            <li>React (création de composants d'interface utilisateur)</li>
+            <li>Redux (gestion de l'état global)</li>
+            <li>React Router (navigation entre pages)</li>
+            <li>Node.js (exécution de JavaScript côté serveur)</li>
+            <li>API REST (intégration avec des back-end et échanges client/serveur)</li>
+            <li>Git et GitHub (gestion de version)</li>
+            <li>Figma (utilisation de maquettes pour le design)</li>
+            <li>Chrome DevTools (debugging et optimisation des performances)</li>
+            <li>Lighthouse (analyse des performances et du SEO)</li>
+            <li>Wave (évaluation de l'accessibilité)</li>
+            <li>Swagger (documentation des API)</li>
+            <li>Visual Studio Code (environnement de développement)</li>
+            <li>Yarn (gestion des packages)</li>
+            <li>Gestion des performances, SEO, et accessibilité</li>
+          </ul>
+        </div> 
+
+        <div class="titres encadre" >
+          <h3 class="titre">HTML5</h3>
+          <h3 class="titre">CSS3</h3>
+          <h3 class="titre">Javascript</h3>
+          <h3 class="titre">NodeJs</h3>
+          <h3 class="titre">React</h3>
+          <h3 class="titre">Sass</h3>
+        </div>
+ 
+        <div class="carousel-container encadre">
+            <div class="carousel" id="carousel">
+                <div class="carousel-item "><img src="images/logos/html.webp" alt="HTML Logo"></div>
+                <div class="carousel-item "><img src="images/logos/css.webp" alt="CSS Logo"></div>
+                <div class="carousel-item "><img src="images/logos/javascript.webp" alt="JavaScript Logo"></div>
+                <div class="carousel-item "><img src="images/logos/node.webp" alt="Node.js Logo"></div>
+                <div class="carousel-item "><img src="images/logos/react.webp" alt="React Logo"></div>
+                <div class="carousel-item "><img src="images/logos/sass.webp" alt="Sass Logo"></div>
+            </div>
+    
+            <div class="controls">
+                <button id="prev" >◄</button>
+                <span id="counter">1 / 6</span>
+                <button id="next" >►</button>
+            </div>
+        </div>
+
+        
+      </section>
+    
+
+      <section class="projets" id="projets">
+        <h2 class="encadre">Projets de formation</h2>
+        <div id="projets-container" ></div>
+        
+      </section>
+    
+   
+
+
+      <section class="contact encadre" id="contact">
+        <h2>Me contacter :</h2>
+
+        <form action="https://formspree.io/f/ton-endpoint" method="POST" class="two-column-form">
+          <div class="form-column">
+            <div class="form-row">
+              <input type="text" name="first-name" placeholder="Prénom" required>
+              <input type="text" name="last-name" placeholder="Nom de famille" required>
+            </div>
+        
+            <input type="email" name="email" placeholder="E-mail" required>
+        
+            <input type="text" name="subject" placeholder="Sujet" required>
+          </div>
+        
+          <div class="form-column">
+            <textarea name="message" placeholder="Message" required></textarea>
+        
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="ton-site-key"></div>
+        
+            <button type="submit">ENVOYER</button>
+          </div>
+        </form>
+        
+      </section>
+      
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Véronique Urbino. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

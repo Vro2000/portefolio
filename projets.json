@@ -1,0 +1,144 @@
+[
+  {
+    "nom-projet": "Riding Cities",
+    "img-site": "riding-cities.jpg",
+    "alt": "Image du projet Riding Cities",
+    "objectif": "Mettre à jour la page web d'une association en intégrant une nouvelle section pour le téléchargement de plannings. ",
+    "technologies-utilisées": [
+      "HTML pour la structure de la page",
+      "CSS pour adapter les styles déjà existants",
+      "Figma pour accéder aux maquettes",
+      "Visual Studio Code pour coder"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/riding-cities",
+    "lien-site": "https://vro2000.github.io/riding-cities/"
+  },
+  {
+    "nom-projet": "Booki",
+    "img-site": "booki.jpg",
+    "alt": "Image du projet Booki",
+    "objectif": "Créez la page d'accueil d'une agence de voyage en intégrant une interface responsive en HTML et CSS pour mobile, tablette et desktop.",
+    "technologies-utilisées": [
+      "HTML pour la structure de la page",
+      "CSS pour adapter le responsive design",
+      "Figma pour accéder aux maquettes",
+      "Visual Studio Code pour coder"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/booki",
+    "lien-site": "https://vro2000.github.io/booki/"
+  },
+  {
+    "nom-projet": "Ohmyfood",
+    "img-site": "ohmyfood.jpg",
+    "alt": "Image du projet Ohmyfood",
+    "objectif": "Améliorer l'interface mobile-first d'un site avec des animations CSS et des styles optimisés à l'aide de Sass.",
+    "technologies-utilisées": [
+      "HTML pour la structure de la page",
+      "CSS pour les styles et animations",
+      "Sass pour optimiser les styles",
+      "Figma pour accéder aux maquettes",
+      "Visual Studio Code pour coder",
+      "Git et GitHub pour la gestion de version"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/ohmyfood",
+    "lien-site": "https://vro2000.github.io/ohmyfood/"
+  },
+  {
+    "nom-projet": "Print it",
+    "img-site": "print-it.jpg",
+    "alt": "Image du projet Print it",
+    "objectif": "Dynamiser le site d'une imprimerie avec JavaScript en ajoutant un carrousel interactif.",
+    "technologies-utilisées": [
+      "JavaScript pour dynamiser le site",
+      "HTML pour la structure existante",
+      "CSS pour les styles",
+      "Visual Studio Code pour coder",
+      "GitHub pour versionner"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/print-it",
+    "lien-site": "https://vro2000.github.io/print-it/"
+  },
+  {
+    "nom-projet": "Sophie Bluel",
+    "img-site": "sophie-bluel.jpg",
+    "alt": "Image du projet Sophie Bluel",
+    "objectif": "Créer une page web dynamique pour une architecte d'intérieur avec JavaScript. Gérer les interactions utilisateur, manipuler le DOM et communiquer avec une API.",
+    "technologies-utilisées": [
+      "JavaScript pour les interactions et l'API",
+      "HTML pour la structure de la page",
+      "CSS pour les styles",
+      "Figma pour accéder aux maquettes",
+      "Visual Studio Code pour coder",
+      "GitHub pour la gestion de version"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/sophie-bluel",
+    "lien-site": "https://vro2000.github.io/sophie-bluel/"
+  },
+  {
+    "nom-projet": "Kasa",
+    "img-site": "kasa.jpg",
+    "alt": "Image du projet Kasa",
+    "objectif": "Créer une application web de location immobilière avec React. Utiliser React Router pour gérer la navigation et développer les composants d'interface utilisateur.",
+    "technologies-utilisées": [
+      "React pour créer les composants d'interface",
+      "React Router pour la navigation",
+      "Sass pour les styles",
+      "CSS pour les animations",
+      "Create React App pour initialiser le projet",
+      "Node.js pour exécuter JavaScript",
+      "Visual Studio Code pour coder"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/kasa",
+    "lien-site": "https://vro2000.github.io/kasa/"
+  },
+  {
+    "nom-projet": "Nina Carducci",
+    "img-site": "nina-carducci.jpg",
+    "alt": "Image du projet Nina Carducci",
+    "objectif": "Optimiser le référencement d'un site de photographe en améliorant la performance, le SEO et l'accessibilité. Produire un rapport détaillé.",
+    "technologies-utilisées": [
+      "HTML pour structurer la page",
+      "CSS pour adapter les styles",
+      "Lighthouse pour mesurer les performances",
+      "Wave pour évaluer l'accessibilité",
+      "Visual Studio Code pour coder",
+      "GitHub pour versionner"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/nina-carducci",
+    "lien-site": "https://vro2000.github.io/nina-carducci/"
+  },
+  {
+    "nom-projet": "724 Event",
+    "img-site": "724-event.jpg",
+    "alt": "Image du projet 724 Event",
+    "objectif": "Débugger le site d'une agence d'événementiel en utilisant les Chrome DevTools et finaliser le développement en suivant un cahier de recette détaillé.",
+    "technologies-utilisées": [
+      "JavaScript pour débugger",
+      "React Developer Tools pour React",
+      "Chrome DevTools pour identifier les bugs",
+      "Node.js pour exécuter JavaScript",
+      "Yarn pour gérer les packages",
+      "Visual Studio Code pour coder",
+      "GitHub pour versionner"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/724-event",
+    "lien-site": "https://vro2000.github.io/724-event/"
+  },
+  {
+    "nom-projet": "ArgentBank",
+    "img-site": "argentbank.jpg",
+    "alt": "Image du projet ArgentBank",
+    "objectif": "Implémenter le front-end d'une application bancaire en utilisant React et Redux. Intégrez le front-end avec l'API back-end pour gérer les transactions.",
+    "technologies-utilisées": [
+      "React pour créer l'interface utilisateur",
+      "Redux pour gérer l'état global",
+      "API REST pour les échanges client/serveur",
+      "Swagger pour documenter les API",
+      "Node.js pour exécuter JavaScript",
+      "Visual Studio Code pour coder",
+      "GitHub pour versionner"
+    ],
+    "lien-repo-github": "https://github.com/Vro2000/argentbank",
+    "lien-site": "https://vro2000.github.io/argentbank/"
+  }
+]
