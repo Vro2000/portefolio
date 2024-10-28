@@ -2,19 +2,21 @@
     design
 --------------------------------*/
 :root {
-	--fond-color: rgb(40, 0, 40);
-	--encadre-back: rgb(40, 0, 40);
+	--fond-color: rgb(3, 9, 0);
+	--encadre-back: rgba(30, 29, 29, 0.92);
 	--radius-back: rgba(53, 135, 132, 0.9);
 	--button-back: #02b89d; /*#2d9b8b*/
 	--button-hover-back: #fbca04;
 	--titre-active: #bb48b3;
 	--footer-back: rgb(60, 60, 60);
 	--form-back: #fed0177e;
+	--box-shadow: 0px 2px 18px rgba(252, 250, 250, 0.496);
+	--border-shadow: 1px solid #888;
 }
 .encadre {
-	box-shadow: 0px 2px 18px rgba(252, 250, 250, 0.496);
+	box-shadow: var(--box-shadow);
 	background-color: var(--encadre-back);
-	border: 1px solid #888;
+	border: var(--border-shadow);
 	border-radius: 3px;
 	padding: 20px;
 }
@@ -114,6 +116,9 @@ header {
 }
 .logo-nom, nav, .color-picker {
 	pointer-events: auto; /* les clicks sont réactivés*/	
+	box-shadow: var(--box-shadow);
+	border: var(--border-shadow);
+	border-radius: 3px;
 }
 .logo-nom {
 	border-radius: 0 5px 5px 0;
@@ -177,7 +182,7 @@ nav ul {
 .fond {
 	position: fixed;
 	top: -50px;
-	background-image: url(images/fond-developpeur-9.png);
+	background-image: url(images/fond-developpeur-1792x1024.webp);
 	background-color: var(--fond-color);
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -187,14 +192,14 @@ nav ul {
 	z-index: -1;
 }
 .medium {
-	background-image: url(images/Mask-feuilles-ginko.png);
+	background-image: url(images/Mask-medium-ginko-desktop-1920x2160.webp);
 	background-size: 100%;
 	height: 400vh;	/* Plus grand car défile plus vite */
 	z-index: 2;
 	display: flex;
 }
 .fast {
-	background-image: url(images/Mask-feuilles-ginko-2.png);
+	background-image: url(images/Mask-Fast-ginko-desktop-1920x2160.webp);
 	background-size: 100%;
 	height: 1000vh;	/* Le plus grand car défile encore plus vite */
 	z-index: 3;
@@ -257,10 +262,6 @@ section {
 	flex-direction: column;
 	gap: 20px;
 }
-
-/*--------------------------------
-   compétences onglets containers
---------------------------------*/
 .onglet-container {
 	display: flex;
 	margin-bottom: 15px;
@@ -284,6 +285,7 @@ section {
 }
 .onglet-content {
 	display: none;
+	justify-content: center;
 }
 .onglet-content ul {
 	padding-left: 2%;
@@ -326,6 +328,7 @@ section {
 .content-image img {
 	max-width: 100%;
 	height: auto;
+	border-radius: 5px;
 }
 /* Styles pour l'overlay sur image' */
 .image-container {
@@ -356,6 +359,36 @@ section {
 	justify-content: flex-end;
 }
 
+/*--------------------------------
+  formulaire contact
+--------------------------------*/
+/* Style de base pour le formulaire */
+.contact{
+	display: flex;
+	flex-direction: column;
+}
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+}
+/* Style des champs de saisie */
+form input[type="text"], 
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    resize: vertical;
+	background-color: white;
+	opacity: 0.8;
+}
+form button {
+    width: 100%;
+}
+
 /* --------------------------------------- */
 .the-end {
 	width: 50%;
@@ -368,14 +401,17 @@ section {
   Media queries pour responsive
 --------------------------------*/
 @media (max-width: 1024px) { /* Responsive pour tablettes */
+	
 
 	footer {
 		font-size: 10px;
 	}
 }
-
 @media (max-width: 768px) { /* Responsive pour petits écrans/tablettes */
-
+	.fond{
+		background-image: url(images/fond-developpeur-1024x585.webp);
+	}
+	
 	h1,	h2 {
 		font-size: 1.1rem;
 	}
@@ -394,10 +430,14 @@ section {
 	.the-end {
 		width: 70%;
 	}
+	form {
+        padding: 1.5rem;
+    }
 }
-
 @media (max-width: 480px) {	/* Responsive pour mobiles */
-
+	.fond{
+		background-image: url(images/fond-developpeur-640x366.webp);
+	}
 	p,	li {
 		font-size: 12px;
 	}

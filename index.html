@@ -4,11 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Véronique Urbino, développeuse spécialisée en intégration web et design front-end. Découvrez mes projets et compétences techniques." />
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="preload" href="images/fond-developpeur-1792x1024.webp" as="image" media="(min-width: 769px)" />
+  <link rel="preload" href="images/fond-developpeur-1024x585.webp" as="image" media="(max-width: 768px)" />
+  <link rel="preload" href="images/fond-developpeur-640x366.webp" as="image" media="(max-width: 480px)" />
+
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
-  <title>Portefolio Véronique Urbino</title>
   <link rel="stylesheet" href="styles.css" />
+  <title>Portefolio Véronique Urbino</title>
+
 </head>
 
 <body>
@@ -41,9 +49,7 @@
   <!-- ----------------------------------------------------------- -->
   <main>
     <div class="parallax-container fond"></div>
-    <div class="parallax-container medium">
-
-    </div>
+    <div class="parallax-container medium"></div>
     <div class="parallax-container fast"></div>
     <div class="parallax-container contenu" id="home">
 
@@ -138,16 +144,31 @@
       <section class="contact encadre" id="contactID">
         <h2>Me contacter :</h2>
 
-        <form name="contact" method="POST" data-netlify="true"> <!--Active la fonctionnalité Netlify Forms pour gérer les soumissions-->
-          <input type="text" name="name" placeholder="Nom" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="message" placeholder="Votre message" required></textarea>
+        <form name="contact" method="POST" data-netlify="true">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Nom" required>
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+      
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+      
           <button type="submit">Envoyer</button>
       </form>
 
       </section>
 
-      <img class="the-end" src="images/the-end.webp" alt="icone the end" />
+      <img 
+      class="the-end" 
+      src="images/the-end-818x305.webp" 
+      srcset="images/the-end-818x305.webp 818w, images/the-end-350x131.webp 480w" 
+      sizes="(max-width: 480px) 350px, 818px" 
+      alt="icone the end" 
+      width="818" 
+      height="305" 
+    />
+    
     </div>
 
 

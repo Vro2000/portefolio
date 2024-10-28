@@ -73,7 +73,7 @@ function openOnglet(evt, ongletName) {
   });
 
   // Afficher le contenu de l'onglet sélectionné et ajouter 'active' au bouton
-  document.getElementById(ongletName).style.display = 'block';
+  document.getElementById(ongletName).style.display = 'flex';
   evt.currentTarget.classList.add('active');
 }
 
