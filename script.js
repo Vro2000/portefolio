@@ -91,13 +91,14 @@ fetch('projets.json')
   .then((response) => response.json())
   .then((projets) => {
     const projetsContainer = document.getElementById('projets-container');
-    const counter = document.getElementById('counter');
     let currentIndex = 0;
     const totalProjets = projets.length;
 
-    // mise à jour du compteur du carousel
+    // Mise à jour du compteur du carousel
     const updateCounter = () => {
-      counter.textContent = `${currentIndex + 1} / ${totalProjets}`;
+      document.querySelectorAll('.counter').forEach((counter) => {
+        counter.textContent = `${currentIndex + 1} / ${totalProjets}`;
+      });
     };
 
     // Affichage des projets
@@ -105,7 +106,7 @@ fetch('projets.json')
       const projetDiv = document.createElement('div');
       projetDiv.classList.add('projet-item', 'encadre');
 
-      // Création de boutons (si le lien n'est pas null) pour les liens GitHub et site
+      // Création des boutons pour GitHub et le site (si les liens existent)
       let buttonsHTML = '';
       if (projet['lien-repo-github'] !== null) {
         buttonsHTML += `<button onclick="window.open('${projet['lien-repo-github']}', '_blank')">Repo GitHub</button>`;
@@ -114,7 +115,7 @@ fetch('projets.json')
         buttonsHTML += `<button onclick="window.open('${projet['lien-site']}', '_blank')">Voir le site</button>`;
       }
 
-      // Vérifie si le lien de l'image existe (si le lien n'est pas null)
+      // Vérifie si le lien de l'image existe
       let imageHTML = '';
       if (projet['img-site'] !== null) {
         imageHTML = `
@@ -126,10 +127,15 @@ fetch('projets.json')
         imageHTML = `<p>(Image non disponible)</p>`;
       }
 
-      // Insertion des données du projet
+      // Ajoute la structure complète de l'élément de projet
       projetDiv.innerHTML = `
         <div class="content-image">
           ${imageHTML}
+          <div class="carousel-controls">
+            <button class="prevButton">▲ précédent</button>
+            <div class="counter"></div>
+            <button class="nextButton">suivant ▼</button>
+          </div>
         </div>
         <div class="content-text">
           <h3>${projet['nom-projet']}</h3>
@@ -148,29 +154,29 @@ fetch('projets.json')
     updateCounter();
 
     // Gestion des boutons de navigation
-    const nextButton = document.getElementById('nextButton');
-    const prevButton = document.getElementById('prevButton');
+    const nextButtons = document.querySelectorAll('.nextButton');
+    const prevButtons = document.querySelectorAll('.prevButton');
 
     // Fonction pour afficher le projet courant en fonction de l'index
     const EditProjet = (index) => {
-      projetsContainer.scrollTop = projetsContainer.offsetHeight * index; 
+      projetsContainer.scrollTop = projetsContainer.offsetHeight * index;
       updateCounter();
     };
 
-    // projet suivant
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < totalProjets - 1) {
-        currentIndex++;
+    // Projet suivant
+    nextButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalProjets; // Boucle au début après le dernier projet
         EditProjet(currentIndex);
-      }
+      });
     });
 
-    // projet précédent
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
+    // Projet précédent
+    prevButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalProjets) % totalProjets; // Boucle à la fin après le premier projet
         EditProjet(currentIndex);
-      }
+      });
     });
   });
 

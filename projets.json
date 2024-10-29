@@ -112,7 +112,7 @@
   },
   {
     "nom-projet": "ArgentBank",
-    "img-site": null,
+    "img-site": "images/projets/argentbank.webp",
     "alt": "",
     "objectif": "Implémenter le front-end d'une application bancaire en utilisant React et Redux. Intégrez le front-end avec l'API back-end pour gérer les transactions.",
     "technologies-utilisées": [
