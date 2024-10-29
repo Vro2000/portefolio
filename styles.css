@@ -2,11 +2,11 @@
     design
 --------------------------------*/
 :root {
-	--fond-color: rgb(3, 9, 0);
-	--encadre-back: rgba(30, 29, 29, 0.92);
+	--fond-color: rgb(2, 41, 33);
+	--encadre-back: rgba(3, 53, 48, 0.92);
 	--radius-back: rgba(53, 135, 132, 0.9);
 	--button-back: #02b89d; /*#2d9b8b*/
-	--button-hover-back: #fbca04;
+	--button-hover-back: #ebc428;
 	--titre-active: #bb48b3;
 	--footer-back: rgb(60, 60, 60);
 	--form-back: #fed0177e;
@@ -32,7 +32,7 @@ a:hover, label:hover{
 }
 button {
 	width: 50%;
-	padding: 12px;
+	padding: 15px;
 	background-color: var(--button-back);
 	border-radius: 5px;
 	margin-top: 10px;
@@ -181,13 +181,13 @@ nav ul {
 }
 .fond {
 	position: fixed;
-	top: -50px;
+	top: -60px;
 	background-image: url(images/fond-developpeur-1792x1024.webp);
 	background-color: var(--fond-color);
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
+	height: 110vh;
 	opacity: 1;
 	z-index: -1;
 }
@@ -297,67 +297,105 @@ section {
 /*--------------------------------
   Section Projets
 --------------------------------*/
+/* Conteneur principal des projets */
 .projets {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
-}
-#projets-container {
+	gap: 10px;
+  }
+  /* Conteneur du carousel */
+  .carousel {
+	position: relative;
 	display: flex;
-	flex-direction: column;
-	gap: 40px;
-}
-.projet-item {
-	margin-bottom: 300px;
+	flex-direction: column; /* Dispose le carousel en colonne pour le défilement vertical */
+	align-items: center;
+	width: 100%;
+	height: 400px; /* Hauteur définie pour afficher un projet à la fois */
+  }
+  .carousel-container {
+	display: flex;
+	flex-direction: column; /* Organise les éléments en colonne */
+	overflow: hidden;
+	height: 100%; /* Permet au container d'occuper toute la hauteur */
+	scroll-behavior: smooth;
+  }
+  .projet-item {
+	min-height: 100%; /* Prend toute la hauteur visible du carousel */
 	display: flex;
 	gap: 20px;
 	padding: 20px;
-}
-.content-text {
-	flex: 1; 	/* Occupe 1 portion de la largeur */
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-.content-image {
-	flex: 1; 	/* Occupe 1 portion de la largeur */
+	box-sizing: border-box;
+  }
+  .content-image {
+	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-.content-image img {
+  }
+  .content-text {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+  }
+  .content-image img {
 	max-width: 100%;
 	height: auto;
 	border-radius: 5px;
-}
-/* Styles pour l'overlay sur image' */
-.image-container {
+  }
+  /* Styles pour l'overlay sur image */
+  .image-container {
 	position: relative;
-	display: inline-block; /* Nécessaire pour bien positionner l'image et l'overlay */
-}
-
-.image-container img {
+	display: inline-block;
+  }
+  .image-container img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-
-.image-overlay {
+  }
+  .image-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: var(--encadre-back); /* Ajuste la couleur et la transparence */
+	background-color: var(--encadre-back);
 	opacity: 0.3;
-	pointer-events: none; /* Permet aux clics de passer à travers la superposition */
-}
-.buttons-container {
+	pointer-events: none;
+  }
+  /* Conteneur des boutons GitHub et site */
+  .buttons-container {
 	display: flex;
 	gap: 20px;
-	margin-top: 10px;
 	justify-content: flex-end;
-}
+	margin-top: auto;
+	margin-bottom: 20px;
+  }
+  /* Boutons de navigation */
+  .carousel-controls{
+	display: flex;
+	align-items: center;
+  }
+  .carousel-controls h2{
+	flex: 3;
+	text-align: right;
+	margin: 0;
+  }
+  #prevButton {
+	flex: 0.6;
+	margin: 0;
+  }
+  #nextButton {
+	flex: 0.5;
+	margin: 0;
+  }
+  .counter {
+	margin-left: 30px;
+	flex: 2;
+	font-size: 16px;
+
+  }
+  
+
 
 /*--------------------------------
   formulaire contact
@@ -388,6 +426,16 @@ form textarea {
 form button {
     width: 100%;
 }
+.label-hidden{
+	position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
 /* --------------------------------------- */
 .the-end {
@@ -407,6 +455,7 @@ form button {
 		font-size: 10px;
 	}
 }
+
 @media (max-width: 768px) { /* Responsive pour petits écrans/tablettes */
 	.fond{
 		background-image: url(images/fond-developpeur-1024x585.webp);
@@ -421,11 +470,18 @@ form button {
 	section {
 		width: 90%;
 	}
+	.carousel{
+		height: 750px;
+	}
 	.projet-item {
 		flex-direction: column;	
 	}
 	.color-picker {
 		display: none;
+	}
+	.carousel-controls{
+		display: flex;
+		flex-direction: column;
 	}
 	.the-end {
 		width: 70%;
