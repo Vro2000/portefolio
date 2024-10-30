@@ -112,7 +112,7 @@ fetch('projets.json')
         buttonsHTML += `<button onclick="window.open('${projet['lien-repo-github']}', '_blank')">Repo GitHub</button>`;
       }
       if (projet['lien-site'] !== null) {
-        buttonsHTML += `<button onclick="window.open('${projet['lien-site']}', '_blank')">Voir le site</button>`;
+        buttonsHTML += `<button onclick="window.open('${projet['lien-site']}', '_blank')">Voir site</button>`;
       }
 
       // Vérifie si le lien de l'image existe
@@ -127,7 +127,7 @@ fetch('projets.json')
         imageHTML = `<p>(Image non disponible)</p>`;
       }
 
-      // Ajoute la structure complète de l'élément de projet
+      // Ajoute le html dans le DOM
       projetDiv.innerHTML = `
         <div class="content-image">
           ${imageHTML}
@@ -157,7 +157,7 @@ fetch('projets.json')
     const nextButtons = document.querySelectorAll('.nextButton');
     const prevButtons = document.querySelectorAll('.prevButton');
 
-    // Fonction pour afficher le projet courant en fonction de l'index
+    // Fonction pour afficher le projet en fonction de l'index
     const EditProjet = (index) => {
       projetsContainer.scrollTop = projetsContainer.offsetHeight * index;
       updateCounter();

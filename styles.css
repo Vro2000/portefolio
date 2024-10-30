@@ -31,12 +31,13 @@ a:hover, label:hover{
 	color: #f6d85e;
 }
 button {
-	width: 50%;
-	padding: 15px;
+	width: 30%;
+	padding: 5px;
 	background-color: var(--button-back);
 	border-radius: 5px;
 	margin-top: 10px;
 	opacity: 0.9;
+	white-space: nowrap;
 }
 button:hover {
 	background-color: var(--button-hover-back);
@@ -285,13 +286,20 @@ section {
 }
 .onglet-content {
 	display: none;
-	justify-content: center;
-}
-.onglet-content ul {
-	padding-left: 2%;
+	padding-left: 15px;
 }
 .onglet-content ul li {
 	margin-bottom: 5px;
+	color: var(--button-back);
+}
+.onglet-content span{
+	font-size: 18px;
+	color: white;
+	text-shadow: #f6d85e;
+
+}
+#outils {
+	margin-left: 31%;
 }
 
 /*--------------------------------
@@ -365,7 +373,6 @@ section {
 	gap: 20px;
 	justify-content: flex-end;
 	margin-top: auto;
-	margin-bottom: 20px;
   }
   /* Boutons de navigation */
   .carousel-controls {
@@ -373,7 +380,7 @@ section {
 	justify-content: space-between; /* Espace entre les éléments */
 	align-items: center;
 	gap: 10px;
-	width: 60%; /* Prend la largeur de l'image */
+	width: 330px; /* Prend la largeur de l'image */
 	margin-top: auto; /* Pousse les contrôles en bas de .image-container */
   }
   
@@ -438,9 +445,12 @@ form button {
 /*--------------------------------
   Media queries pour responsive
 --------------------------------*/
+
 @media (max-width: 1024px) { /* Responsive pour tablettes */
 	
-
+	section {
+		width: 95%;
+	}
 	footer {
 		font-size: 10px;
 	}
@@ -457,8 +467,16 @@ form button {
 	a {
 		font-size: 0.75rem;
 	}
-	section {
-		width: 90%;
+	.color-picker {
+		display: none;
+	}
+	.onglet-container button {
+		width: 45%;
+		white-space: normal;
+	}
+	
+	#outils {
+		margin-left: 0%;
 	}
 	.carousel{
 		height: 750px;
@@ -466,12 +484,7 @@ form button {
 	.projet-item {
 		flex-direction: column;	
 	}
-	.color-picker {
-		display: none;
-	}
-	.carousel-controls {
-		width: 100%;
-	}
+	
 	.the-end {
 		width: 70%;
 	}

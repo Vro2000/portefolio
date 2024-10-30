@@ -95,7 +95,7 @@
   },
   {
     "nom-projet": "724 Event",
-    "img-site": null,
+    "img-site": "images/projets/724events.webp",
     "alt": "",
     "objectif": "Débugger le site d'une agence d'événementiel en utilisant les Chrome DevTools et finaliser le développement en suivant un cahier de recette détaillé.",
     "technologies-utilisées": [
