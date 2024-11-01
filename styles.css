@@ -5,7 +5,7 @@
 	--fond-color: rgb(2, 41, 33);
 	--encadre-back: rgba(3, 53, 48, 0.92);
 	--radius-back: rgba(53, 135, 132, 0.9);
-	--button-back: #02b89d; /*#2d9b8b*/
+	--button-back: #02b89d;
 	--button-hover-back: #ebc428;
 	--titre-active: #bb48b3;
 	--footer-back: rgb(60, 60, 60);
@@ -113,28 +113,22 @@ header {
 	display: flex;
 	flex-direction: column;
 	padding-top: 10px;
-	pointer-events: none; /* les clicks passent au travers*/
 }
-.logo-nom, nav, .color-picker {
-	pointer-events: auto; /* les clicks sont réactivés*/	
+.logo-nom, nav {
 	box-shadow: var(--box-shadow);
-	border: var(--border-shadow);
-	border-radius: 3px;
+	background-color: var(--radius-back);
+	white-space: nowrap;
 }
 .logo-nom {
 	border-radius: 0 5px 5px 0;
-	background-color: var(--radius-back);
 	width: max-content;
 	padding: 5px 25px 15px 25px;
-	white-space: nowrap;
-	pointer-events: auto; /* les clicks sont réactivés*/
 }
 .logo-nom a {
 	font-size: inherit;	/* hérite de la taille de h1*/
 }
 nav {
 	align-self: flex-end;
-	background-color: var(--radius-back);
 	border-radius: 5px 0px 0px 5px;
 	padding: 5px 25px 0px 25px;
 	margin-bottom: 20px;
@@ -152,12 +146,14 @@ nav ul {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	align-items: center;
 	width: 120px;
 	margin-top: 200px;
-	align-items: center;
 	padding: 5px 5px;
 	background-color: var(--radius-back);
 	border-radius: 100px 0px;
+	box-shadow: var(--box-shadow);
+	gap: 5px;
 }
 .color-picker label {
 	display: flex;
@@ -165,8 +161,8 @@ nav ul {
 	font-size: 12px;
 }
 .color-picker input {
-	margin-top: 5px;
 	padding: 0;	/* Retire le padding par défaut*/
+	background: none; /*supprime effet de bordure sur chrome*/
 	cursor: pointer;
 }
 .color-picker input:hover {
@@ -218,9 +214,8 @@ section {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 280px;
-	display: flex;
 	width: 80%;
-	scroll-margin-top: 278px; /* Ajoute une marge pour compenser la hauteur du header (liens nav). */
+	scroll-margin-top: 278px; /* marge pour compenser la hauteur du header (liens nav). */
 }
 .a-propos {
 	margin-top: 390px;
@@ -267,22 +262,16 @@ section {
 	display: flex;
 	margin-bottom: 15px;
 }
-.onglet-link {
-	padding: 10px 20px;
+.onglet-button {
 	cursor: pointer;
 	border-radius: 5px 5px 0 0;
-	margin: 0 10px;
-	background-color: var(--button-back);
+	margin-right: 20px;
 	opacity: 0.5;
 	transition: background-color 0.3s ease;
 }
-.onglet-link.active {
-	background-color: var(--button-back);
+.onglet-button.active {
 	opacity: 1;
 	font-size: 18px;
-}
-.onglet-link:hover {
-	background-color: var(--button-hover-back);
 }
 .onglet-content {
 	display: none;
@@ -295,8 +284,6 @@ section {
 .onglet-content span{
 	font-size: 18px;
 	color: white;
-	text-shadow: #f6d85e;
-
 }
 #outils {
 	margin-left: 31%;
@@ -305,20 +292,18 @@ section {
 /*--------------------------------
   Section Projets
 --------------------------------*/
-/* Conteneur principal des projets */
-.projets {
+	.projets {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
   }
-  /* Conteneur du carousel */
   .carousel {
 	position: relative;
 	display: flex;
-	flex-direction: column; /* Dispose le carousel en colonne pour le défilement vertical */
+	flex-direction: column; /* colonne pour le défilement vertical */
 	align-items: center;
 	width: 100%;
-	height: 400px; /* Hauteur définie pour afficher un projet à la fois */
+	height: 400px; /* Hauteur pour un projet à la fois */
   }
   .carousel-container {
 	width: 100%;
@@ -328,7 +313,7 @@ section {
 	scroll-behavior: smooth;
   }
   .projet-item {
-	min-height: 100%; /* Prend toute la hauteur visible de carousel */
+	min-height: 100%;
 	display: flex;
 	gap: 20px;
   }
@@ -338,36 +323,17 @@ section {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	opacity: 0.8;
+  }
+  .content-image img{
+	border-radius: 5px;
   }
   .content-text {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
   }
-  
-  /* Styles pour l'overlay sur image */
-  .image-container {
-	position: relative;
-	display: inline-block;
-  }
-  .image-container img {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 3px;
-  }
-  .image-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--encadre-back);
-	opacity: 0.3;
-	pointer-events: none;
-  }
-  /* Conteneur des boutons GitHub et site */
+  /* Boutons GitHub et site */
   .buttons-container {
 	display: flex;
 	gap: 20px;
@@ -377,27 +343,25 @@ section {
   /* Boutons de navigation */
   .carousel-controls {
 	display: flex;
-	justify-content: space-between; /* Espace entre les éléments */
+	justify-content: space-between; 
 	align-items: center;
 	gap: 10px;
 	width: 330px; /* Prend la largeur de l'image */
 	margin-top: auto; /* Pousse les contrôles en bas de .image-container */
   }
-  
   .prevButton,
   .nextButton,
   .counter {
 	flex: 1; /* Prend 1/3 de la largeur disponible */
-	text-align: center; /* Centre le texte dans chaque élément */
+	text-align: center; 
 	font-size: 12px;
 	padding: 5px;
-	white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+	white-space: nowrap; 
   }
 
 /*--------------------------------
   formulaire contact
 --------------------------------*/
-/* Style de base pour le formulaire */
 .contact{
 	display: flex;
 	flex-direction: column;
@@ -405,10 +369,7 @@ section {
 form {
     max-width: 600px;
     margin: 0 auto;
-    padding: 2rem;
-    border-radius: 8px;
 }
-/* Style des champs de saisie */
 form input[type="text"], 
 form input[type="email"],
 form textarea {
@@ -417,7 +378,6 @@ form textarea {
     margin: 0.5rem 0;
     border-radius: 4px;
     resize: vertical;
-	background-color: white;
 	opacity: 0.8;
 }
 form button {
@@ -427,11 +387,7 @@ form button {
 	position: absolute;
     width: 1px;
     height: 1px;
-    padding: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
 }
 
 /* --------------------------------------- */
@@ -460,7 +416,6 @@ form button {
 	.fond{
 		background-image: url(images/fond-developpeur-1024x585.webp);
 	}
-	
 	h1,	h2 {
 		font-size: 1.1rem;
 	}
@@ -472,9 +427,7 @@ form button {
 	}
 	.onglet-container button {
 		width: 45%;
-		white-space: normal;
 	}
-	
 	#outils {
 		margin-left: 0%;
 	}
@@ -484,7 +437,6 @@ form button {
 	.projet-item {
 		flex-direction: column;	
 	}
-	
 	.the-end {
 		width: 70%;
 	}
@@ -508,7 +460,13 @@ form button {
 	.titres h3 {
 		margin: 3px;
 	}
-	.onglet-link.active {
+	.onglet-button.active {
 		font-size: 14px;
 	}
+	.onglet-content span{
+		font-size: 14px;
+	}
+	.content-image img{
+		width: 95%;
+	  }
 }

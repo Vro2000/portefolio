@@ -2,21 +2,37 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <meta name="description" content="Portfolio de Véronique Urbino, développeuse spécialisée en intégration web et design front-end. Découvrez mes projets et compétences techniques." >
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" >
-  <link rel="preconnect" href="https://fonts.googleapis.com" >
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Véronique Urbino, développeuse spécialisée en intégration web et design front-end. Découvrez mes projets et compétences techniques.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preload" href="images/fond-developpeur-1792x1024.webp" as="image" media="(min-width: 769px)" >
-  <link rel="preload" href="images/fond-developpeur-1024x585.webp" as="image" media="(max-width: 768px)" >
-  <link rel="preload" href="images/fond-developpeur-640x366.webp" as="image" media="(max-width: 480px)" >
+  <!-- Preload images -->
+  <link rel="preload" href="images/fond-developpeur-1792x1024.webp" as="image" media="(min-width: 769px)">
+  <link rel="preload" href="images/fond-developpeur-1024x585.webp" as="image" media="(max-width: 768px)">
+  <link rel="preload" href="images/fond-developpeur-640x366.webp" as="image" media="(max-width: 480px)">
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet" >
-  <link rel="stylesheet" href="styles.css" >
-  <title>Portefolio Véronique Urbino</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Portfolio Véronique Urbino</title>
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfolio Véronique Urbino">
+  <meta property="og:description" content="Développeuse spécialisée en intégration web et design front-end. Découvrez mes projets et compétences techniques.">
+  <meta property="og:image" content="images/fond-developpeur-1200x636.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="636">
+  <meta property="og:url" content="https://veronique-urbino-portefolio.netlify.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio Véronique Urbino">
+  <meta name="twitter:description" content="Développeuse spécialisée en intégration web et design front-end. Découvrez mes projets et compétences techniques.">
+  <meta name="twitter:image" content="images/fond-developpeur-1200x636.webp">
 </head>
 
 <body>
@@ -32,27 +48,24 @@
 
     <div class="logo-nom">
       <h1>
-        <a href="#home">Véronique Urbino {<br />developpeur-web: frontend; }</a>
+        <a href="#home">Véronique Urbino {<br >developpeur-web: frontend; }</a>
       </h1>
     </div>
 
-    <!-- change le background-color de class .fond via JavaScript -->
     <div class="color-picker">
       <p id="emoji">😃</p> 
       <label for="background-color-picker">
         Choisis ta couleur
       </label>
-      <input type="color" id="background-color-picker" name="background-color-picker" />
+      <input type="color" id="background-color-picker" name="background-color-picker" >
     </div>
   </header>
-
 
   <main>
     <div class="parallax-container fond"></div>
     <div class="parallax-container medium"></div>
     <div class="parallax-container fast"></div>
     <div class="parallax-container contenu" id="home">
-
 
       <section class="a-propos encadre" id="aboutID">
         <div>
@@ -61,7 +74,7 @@
             Je suis développeuse web frontend basée en Île de France.
           </p>
           <p>
-            Spécialisée dans la création d'expériences web modernes et dynamiques, combinant créativité et
+            Spécialisée dans la création d'expériences web dynamiques, combinant créativité et
             techniques innovantes, je propose des interfaces intuitives, des animations interactives et une
             expérience utilisateur de qualité. Les meilleures pratiques SEO, pour l'optimisation du référencement
             sur les moteurs de recherche, et le respect des principes du green code, font partie intégrante de
@@ -88,16 +101,14 @@
         </div>
       </div>
 
-
       <section class="competences" id="competencesID">
         
           <h2 class="encadre">Mes compétences</h2>
-      
-        <!-- Bloc Compétences avec Onglets -->
+
         <div class="competences-container encadre">
           <div class="onglet-container">
-            <button class="onglet-link active" onclick="openOnglet(event, 'langages')">Langages et Frameworks</button>
-            <button class="onglet-link" onclick="openOnglet(event, 'outils')">Outils et Environnements</button>
+            <button class="onglet-button active" data-onglet="langages">Langages et <br>Frameworks</button>
+            <button class="onglet-button" data-onglet="outils">Outils et <br>Environnements</button>
           </div>
       
           <div id="langages" class="onglet-content">
@@ -130,38 +141,26 @@
           </div>
         </div>
       </section>
-      
-
-
-
 
       <section class="projets" id="projetsID">
-        <h2 class="encadre" >Projets de formation</h2>
-        
+          <h2 class="encadre" >Projets de formation</h2>
         <div class="carousel">
           <div id="projets-container" class="carousel-container"></div>
         </div>
       </section>
-      
-      
-
 
       <section class="contact encadre" id="contactID">
         <h2>Me contacter :</h2>
 
         <form name="contact" method="POST" data-netlify="true">
-         
           <label for="name" class="label-hidden">Nom</label>
           <input type="text" id="name" name="name" placeholder="Nom" required>
-      
           <label for="email" class="label-hidden">Email</label>
           <input type="email" id="email" name="email" placeholder="Email" required>
-      
           <label for="message" class="label-hidden">Votre message</label>
           <textarea id="message" name="message" placeholder="Votre message" required></textarea>
-      
           <button type="submit">Envoyer</button>
-      </form>
+        </form>
 
       </section>
 
@@ -175,8 +174,6 @@
       height="305" >
     
     </div>
-
-
 
   </main>
 
